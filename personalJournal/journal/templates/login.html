@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel='stylesheet' href="{% static 'css/logReg.css' %}">
+    <title>Personal Journal: Login</title>
+</head>
+<body>
+    <header>
+        <h1>Personal Journal</h1>
+        <h5>Write Journal Entries only you can see</h5>
+    </header>
+    <div class="container">
+        <div class="message">
+            <h3>A safe and private space for you to express your thoughts</h3>
+            <h3>Go ahead and write on...</h3>
+        </div>
+        <form action="/login" method="POST">
+            {% if messages %}
+                <ul class="messages">    
+                {% for message in messages %}    
+                    <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>    
+                {% endfor %}
+                </ul>
+            {% endif %}
+            {% csrf_token %}
+            <h3>Please Sign In</h3>
+            <div class="row">
+                <div class="left">
+                    <label for="loginEmail">Email</label>
+                </div>
+                <div class="right">
+                    <input type="text" name="loginEmail">
+                </div>
+            </div>
+            <div class="row">
+                <div class="left">
+                    <label for="loginPW">Password</label>
+                </div>
+                <div class="right">
+                    <input type="password" name="loginPW">
+                </div>
+            </div>
+            <input type="submit" value="Login">
+            <a id="reg" href="/registration">New? Register here!</a>
+        </form>
+    </div>
+</body>
+</html>

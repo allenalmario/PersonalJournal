@@ -1,0 +1,233 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid black;
+    background-color: rgb(6, 75, 179);
+    color: white;
+    height: 80px;
+    font-size: 30px;
+    padding: 20px 20px 20px 20px;
+}
+
+header a {
+    color: white;
+    font-size: 20px;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 200px;
+}
+
+.entries {
+    /* border: 2px dotted green; */
+    display: block;
+    justify-content: center;
+    /* align-items: center; */
+    height: auto;
+    width: 970px;
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 25px;
+}
+
+.messages {
+    color: red;
+    font-size: 15px;
+    padding: 10px;
+}
+
+.createEntry {
+    background-color: #c9c8c8;
+    width: 940px;
+    height: auto;
+    padding: 15px;
+    border-radius: 15px;
+    margin: auto;
+    margin-bottom: 40px;
+    box-shadow: 5px 10px 18px #888888;
+}
+
+.createEntry label  {
+    display: block;
+    font-size: 20px;
+    margin-top: 15px;
+}
+
+.createEntry input {
+    display: block;
+    height: 30px;
+    width: 400px;
+    font-size: 15px;
+    padding: 3px;
+    margin-top: 10px;
+}
+
+.createEntry textarea {
+    margin: auto;
+    margin-top: 20px;
+    width: 900px;
+    height: 150px;
+    padding: 10px;
+    font-size: 15px;
+}
+
+.createEntry input[type=submit] {
+    background-color: #4caf50;
+    color: white;
+    font-weight: bold;
+    width: 80px;
+    height: 30px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    border-radius: 10px;
+    box-shadow: 5px 10px 8px #888888;
+}
+
+.createEntry input[type=submit]:hover {
+    background-color: #4a914c;
+}
+
+.createEntry a {
+    display: block;
+    color: red;
+    margin-top: 30px;
+    margin-left: 440px;
+}
+
+.entry {
+    /* border: 1px dotted red; */
+    margin-top: 30px;
+    margin-bottom: 30px;
+    background-color: #FFCC00;
+    height: auto;
+    padding: 20px;
+    line-height: 30px;
+    border-radius: 15px;
+    box-shadow: 5px 10px 18px #888888;
+}
+
+.entry button {
+    background-color: #4caf50;
+    color: white;
+    font-weight: bold;
+    padding: 3px;
+    width: 60px;
+    border-radius: 10px;
+    box-shadow: 5px 10px 8px #888888;
+}
+
+.entry button:hover {
+    background-color: #4a914c;
+}
+
+footer {
+    background-color: rgb(6, 75, 179);
+    height: 70px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer ul {
+    display: flex;
+    list-style: none;
+}
+
+footer ul li {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+footer a {
+    color: white;
+}
+
+.edit {
+    /* border: 2px dotted green; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 700px;
+}
+
+.editEntry {
+    background-color: #c9c8c8;
+    width: 940px;
+    height: auto;
+    padding: 15px;
+    border-radius: 15px;
+    margin: auto;
+    box-shadow: 5px 10px 18px #888888;
+}
+
+.editEntry label  {
+    display: block;
+    font-size: 20px;
+    margin-top: 15px;
+}
+
+.editEntry input {
+    display: block;
+    height: 30px;
+    width: 400px;
+    font-size: 15px;
+    padding: 3px;
+    margin-top: 10px;
+}
+
+.editEntry textarea {
+    margin: auto;
+    margin-top: 20px;
+    width: 900px;
+    height: 150px;
+    padding: 10px;
+    font-size: 15px;
+}
+
+.editEntry input[type=submit] {
+    background-color: #4caf50;
+    color: white;
+    font-weight: bold;
+    width: 80px;
+    height: 30px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    border-radius: 10px;
+    box-shadow: 5px 10px 8px #888888;
+}
+
+.editEntry input[type=submit]:hover {
+    background-color: #4a914c;
+}
+
+.editEntry a {
+    display: block;
+    color: red;
+    margin-top: 30px;
+    margin-left: 440px;
+}

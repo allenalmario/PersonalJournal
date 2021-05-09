@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel='stylesheet' href="{% static 'css/style.css' %}">
+    <title>Dashboard</title>
+</head>
+<body>
+    <header>
+        <h1>Welcome, {{ user.first_name }} {{ user.last_name }} </h1>
+        <div class="nav">
+            <a href="/dashboard">Home</a>
+            <a href="/logout">Log out</a>
+        </div>
+    </header>
+    <div class="entries">
+        <form class="createEntry" action="/createEntry" method="POST">
+            {% if messages %}
+                <ul class="messages">    
+                {% for message in messages %}    
+                    <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>    
+                {% endfor %}
+                </ul>
+            {% endif %}
+
+            {% csrf_token %}
+            <h2>Write a Journal Entry</h2>
+            <label for="entryTitle">Title</label>
+            <input type="text" name="entryTitle">
+            <label for="entryDesc">Description</label>
+            <input type="text" name="entryDesc" placeholder="Write a short description...">
+            <textarea name="entry"></textarea>
+            <input type="submit" value="Create">
+        </form>
+
+        <h1>Your Journal Entries</h1>
+
+        {% for entry in user.entries.all reversed %}
+        <div class="entry">
+            <h3>Title: {{ entry.title }}</h3>
+            <h4>Description: {{ entry.desc }}</h4>
+            <h4>Date: {{entry.created_at}}</h4>
+            <span><h4>Journal Entry: </h4><p>{{ entry.journal_entry }}</p></span>
+            <form action="/editPage/{{entry.id}}" method="POST">
+                {% csrf_token %}
+                <button type="submit">Edit</button>
+                <button type="submit" formaction="/delete/{{entry.id}}">Delete</button>
+            </form>
+        </div>
+        {% endfor %}
+    </div>
+    <footer>
+        <ul>
+            <li><a href="#top">Back to top</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+    </footer>
+</body>
+</html>

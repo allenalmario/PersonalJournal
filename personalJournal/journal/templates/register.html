@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel='stylesheet' href="{% static 'css/logReg.css' %}">
+    <title>Personal Journal: Register</title>
+</head>
+<body>
+    <header>
+        <h1>Personal Journal</h1>
+        <h5>Write Journal Entries only you can see</h5>
+    </header>
+    <div class="container">
+        <form action="/register" method="POST">
+            {% if messages %}
+                <ul class="messages">    
+                {% for message in messages %}    
+                    <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>    
+                {% endfor %}
+                </ul>
+            {% endif %}
+            {% csrf_token %}
+            <h3>Hello New User, Register!</h3>
+            <div class="row">
+                <label for="regFN">First Name</label>
+                <input type="text" name="regFN">
+            </div>
+            <div class="row">
+                <label for="regLN">Last Name</label>
+                <input type="text" name="regLN">
+            </div>
+            <div class="row">
+                <label for="regEmail">Email</label>
+                <input type="text" name="regEmail">
+            </div>
+            <div class="row">
+                <label for="regPW">Password</label>
+                <input type="password" name="regPW">
+            </div>
+            <div class="row">
+                <label for="regCon">Confirm Password</label>
+                <input type="password" name="regCon">
+            </div>
+            <input type="submit" value="Register">
+        </form>
+    </div>
+</body>
+</html>
